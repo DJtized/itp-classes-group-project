@@ -1,6 +1,7 @@
 
 class GameState {
   ArrayList<Brick> bricks = new ArrayList<Brick>();
+
   ArrayList<Brick> bricks2 = new ArrayList<Brick>();
   int brickLimit = 8;
   
