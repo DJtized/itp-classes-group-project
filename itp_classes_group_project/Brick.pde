@@ -3,11 +3,12 @@ class Brick{
   int posY;
   int prevPosX;
   int prevPosY;
-  int sizeX = 40;
-  int sizeY = 20;
+  int sizeX = 100;
+  int sizeY = 35;
+  color brickRGB = color(random(0,255), random(0, 255), random(0, 255));
   
-  void draw(float r, float g, float b){
-    fill(r, g, b);
+  void draw(){
+    fill(brickRGB);
     rect(posX, posY, sizeX, sizeY);
   }
   

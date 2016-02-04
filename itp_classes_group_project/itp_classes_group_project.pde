@@ -1,10 +1,10 @@
-
+GameState gameState;
 Paddle paddle;
 Ball ball;
 void setup() {
   size(1280, 720);
   gameState = new GameState();
-  gameState.level1();
+  gameState.setup();
   //rectMode(CENTER);
   paddle = new Paddle();
   ball = new Ball();
@@ -12,6 +12,10 @@ void setup() {
 
 void draw() {
   background(255);
+  gameState.level1();
+  fill(255);
   paddle.draw();
   ball.draw();
   ball.collision();
+
+}
