@@ -1,18 +1,18 @@
 
 class GameState {
-  ArrayList<Brick> bricks = new ArrayList<Brick>();
+  ArrayList<Brick> bricks = new ArrayList<Brick>(); //each arrayList controls one row of bricks
   ArrayList<Brick> bricks2 = new ArrayList<Brick>();
   ArrayList<Brick> bricks3 = new ArrayList<Brick>();
   ArrayList<Brick> bricks4 = new ArrayList<Brick>();
   ArrayList<Brick> bricks5 = new ArrayList<Brick>();
-  int brickLimit = 10;
+  int brickLimit = 10; //number of bricks per row
   
   void setup() {
     for (int i = 0; i < brickLimit; i++) {
       bricks.add(new Brick());
       Brick brick = bricks.get(i);
       if (i > 0) {
-        brick.prevPosX = bricks.get(i-1).posX + brick.sizeX;
+        brick.prevPosX = bricks.get(i-1).posX + brick.sizeX; //sets the position of each brick to be next to the previous one
       }
       brick.posX = brick.prevPosX;
       brick.posY = 0;
@@ -65,7 +65,7 @@ class GameState {
   }
   }
   void level1(){
-    for (int i = 0; i < brickLimit; i++) {
+    for (int i = 0; i < brickLimit; i++) { //each loop draws a row of bricks
     Brick brick = bricks.get(i);
     brick.draw();
     }
