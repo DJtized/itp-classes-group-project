@@ -1,5 +1,6 @@
 
 class GameState {
+  
   ArrayList<Brick> bricks = new ArrayList<Brick>(); //each arrayList controls one row of bricks
   ArrayList<Brick> bricks2 = new ArrayList<Brick>();
   ArrayList<Brick> bricks3 = new ArrayList<Brick>();

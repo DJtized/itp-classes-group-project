@@ -3,14 +3,15 @@ class Ball{
   int sizeX = 50; //Any sensible value
   int sizeY = 50; //Any sensible value
   int rad = sizeY/2; //Radius variable required for better hit detection
-  float posX;
-  float posY;
+  float posX = width/2;
+  float posY = height/2;
   int hitcount = 0; //debug
   int hitcount2 = 0; //debug
   int hitcount3 = 0; //debug
   int hitcount4 = 0; //debug
   int hitcount5 = 0; //debug
-  //float velocity = ;
+  float velocityX = 6;
+  float velocityY = 6;
   
   void draw(){
     update();
@@ -18,20 +19,33 @@ class Ball{
     //print("\n");
     //print("PosY is currently: "+posY);
     //print("\n");
-    ellipse(mouseX,mouseY,sizeX,sizeY);
+    ellipse(posX,posY,sizeX,sizeY);
     
   }
   
   void update(){
-    posX = mouseX;
-    posY = mouseY;
+    //posX = mouseX; //Debug
+    //posY = mouseY;
+    posX += velocityX;
+    posY += velocityY;
   }
   
   void collision(){ //<>//
     
+    //IF statements for the ball to bounce off the sides of the window
+    if(posX > width || posX < 0){
+      velocityX = -velocityX;
+    }
+    
+    if(posY > height || posY < 0){
+      velocityY = -velocityY;
+    }
+    
     //Use of rad variable to add/minus from centre of ball to calculate edge. This code is for the paddle
     if(posX >= paddle.posX-rad && posX <= paddle.posX+rad + paddle.sizeX && posY >= paddle.posY-rad){
       print("Ball hits paddle\n");//Debug
+      velocityX = -velocityX;
+      velocityY = -velocityY;
       //fill(255,0,0); //Debug
     }
     else{
@@ -51,7 +65,7 @@ class Ball{
     //Use of rad variable to add/minus from centre of ball to calculate edge. This code is for the brick row 1
     if(posY >= brick.posY-rad && posY <= brick.posY+rad + brick.sizeY && posX >= brick.posX-rad){
      print("Ball hits brick row 1 "+hitcount+"\n");//Debug
-     hitcount++;
+     hitcount++;//Debug
      //fill(255,0,0); //Debug
     }
     else{
