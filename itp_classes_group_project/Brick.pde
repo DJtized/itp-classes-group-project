@@ -18,5 +18,10 @@ class Brick{
   }
   
   void collision(){
+    
+     
+    
+    
+    
   }
 }

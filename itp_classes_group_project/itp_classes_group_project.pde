@@ -1,6 +1,7 @@
 GameState gameState;
 Paddle paddle;
 Ball ball;
+Brick brick;
 void setup() {
   size(1280, 720);
   gameState = new GameState();
@@ -8,6 +9,7 @@ void setup() {
   //rectMode(CENTER);
   paddle = new Paddle();
   ball = new Ball();
+  brick = new Brick();
 }
 
 void draw() {
