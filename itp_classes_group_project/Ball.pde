@@ -5,6 +5,7 @@ class Ball{
   int rad = sizeY/2; //Radius variable required for better hit detection
   float posX;
   float posY;
+  int hitcount = 0; //debug
   //float velocity = ;
   
   void draw(){
@@ -24,14 +25,36 @@ class Ball{
   
   void collision(){ //<>//
     
-    //Use of rad variable to add/minus from centre of ball to calculate edge
-    if(posX >= paddle.posX-rad && ball.posX <= paddle.posX+rad + paddle.sizeX && posY >= paddle.posY-rad){
+    //Use of rad variable to add/minus from centre of ball to calculate edge. This code is for the paddle
+    if(posX >= paddle.posX-rad && posX <= paddle.posX+rad + paddle.sizeX && posY >= paddle.posY-rad){
       print("Ball hits paddle\n");//Debug
-      fill(255,0,0); //Debug
+      //fill(255,0,0); //Debug
     }
     else{
-      fill(255); //Debug
+      //fill(255); //Debug
     }
+    
+    ////Use of rad variable to add/minus from centre of ball to calculate edge. This code is for the brick
+    //if(posX >= gameState.bricks.posX-rad && posX <= brick.posX+rad + brick.sizeX && posY >= brick.posY-rad){
+    //  print("Ball hits brick "+hitcount+"\n");//Debug
+    //  hitcount++;
+    //  //fill(255,0,0); //Debug
+    //}
+    //else{
+    //  //fill(255); //Debug
+    //}
+    
+    //Use of rad variable to add/minus from centre of ball to calculate edge. This code is for the brick
+    if(posX >= brick.posX-rad && posX <= brick.posX+rad + brick.sizeX && posY >= brick.posY-rad){
+     print("Ball hits brick "+hitcount+"\n");//Debug
+     hitcount++;
+     //fill(255,0,0); //Debug
+    }
+    else{
+     //fill(255); //Debug
+    }
+    
+   
     
     /*PSEUDO:
     
