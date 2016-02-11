@@ -45,7 +45,7 @@ class Ball{
     //}
     
     //Use of rad variable to add/minus from centre of ball to calculate edge. This code is for the brick
-    if(posX >= brick.posX-rad && posX <= brick.posX+rad + brick.sizeX && posY >= brick.posY-rad){
+    if(posY >= brick.posY-rad && posY <= brick.posY+rad + brick.sizeY && posX >= brick.posX-rad){
      print("Ball hits brick "+hitcount+"\n");//Debug
      hitcount++;
      //fill(255,0,0); //Debug
